@@ -10,7 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 100vh;
   padding: 20px;
   background-color: #f7f7f7;
@@ -18,16 +18,74 @@ body {
 
 h1 {
   margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
   color: #333333;
   text-align: center;
+}
+
+/* Стилі для форми */
+form {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  font-size: 14px;
+  color: #333333;
+}
+
+form input {
+  flex: 1;
+  padding: 8px;
+  margin-left: 10px;
+  font-size: 14px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+}
+
+form input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  background-color: #3498db;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #2980b9;
 }
 
 /* Стилі для таблиці */
 table {
   width: 100%;
+  max-width: 700px;
   margin-top: 20px;
   border-collapse: collapse;
   background-color: #ffffff;
+  border: 1px solid #dddddd;
   box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
 }
 
@@ -38,6 +96,7 @@ th, td {
 }
 
 th {
+  font-weight: bold;
   color: #ffffff;
   background-color: #3498db;
 }
@@ -50,76 +109,27 @@ tr:hover {
   background-color: #e0f0ff;
 }
 
-/* Кнопки */
-button {
-  padding: 8px 16px;
-  font-size: 14px;
-  color: white;
-  cursor: pointer;
-  background-color: #3498db;
-  border: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+td:last-child {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 
-button:hover {
-  background-color: #2980b9;
-}
 
-button:focus {
-  outline: none;
-}
-
-/* Стилі для форми */
-form {
-  width: 100%;
-  max-width: 500px;
-  padding: 20px;
-  margin-bottom: 30px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
-}
-
-form div {
-  margin-bottom: 15px;
-}
-
-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 16px;
-  color: #333333;
-}
-
-form input {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
-}
-
-form input:focus {
-  border-color: #3498db;
-  outline: none;
-}
-
-form button:hover {
-  background-color: #27ae60;
-}
-
-form button:focus {
-  outline: none;
-}
 
 /* Адаптивність для мобільних пристроїв */
 @media (width <= 768px) {
   table {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   form {
     width: 90%;
+  }
+
+  td:last-child {
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
   }
 }

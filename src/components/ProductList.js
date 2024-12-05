@@ -1,5 +1,7 @@
 import React from 'react';
 import './../App.css'; // Імпортуємо CSS файл
+import deleteIcon from './../assets/delete.png';
+import editIcon from './../assets/edit.png';
 
 function ProductList({ products, onEdit, onDelete }) {
   return (
@@ -21,13 +23,19 @@ function ProductList({ products, onEdit, onDelete }) {
             <td>{product.body}</td>
             <td>{product.price}</td>
             <td>
-              <button onClick={() => onEdit(product)} style={{ marginRight: '10px' }}>Edit</button>
-              <button onClick={() => onDelete(product.id)}>Delete</button>
+              <button onClick={() => onEdit(product)} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
+                <img src={editIcon} alt="Edit" style={{ width: '24px', height: '24px' }} />
+              </button>
+
+              <button onClick={() => onDelete(product.id)} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
+                <img src={deleteIcon} alt="Delete" style={{ width: '24px', height: '24px' }} />
+              </button>
+
             </td>
           </tr>
         ))}
       </tbody>
-    </table>
+    </table >
   );
 }
 
